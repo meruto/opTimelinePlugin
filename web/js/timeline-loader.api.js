@@ -451,12 +451,12 @@ function autoLinker(json)
           var url = 'http://amazon.openpne.jp/?id=' + id + '&tag=';
           json.data[i].body_html = json.data[i].body.replace(/((http:|https:)\/\/www\.amazon\..*\/([a-zA-Z0-9_\-]+)\/.*)/, '<div><iframe MARGINWIDTH="0" MARGINHEIGHT="0" HSPACE="0" VSPACE="0" FRAMEBORDER="0" SCROLLING="no" BORDERCOLOR="#000000" src="' + url + '" name="sample" width="360" height="320">この部分はインラインフレームを使用しています。</iframe></div>');
         }else{
-          json.data[i].body_html = json.data[i].body.replace(/((http:|https:)\/\/[\x21-\x26\x28-\x7e]+)/gi, '<div class="urlBlock"><img src="http://mozshot.nemui.org/shot/large?$1"><br />$1</div>$1</a>11111');
+          json.data[i].body_html = json.data[i].body.replace(/((http:|https:)\/\/[\x21-\x26\x28-\x7e]+)/gi, '<div class="urlBlock"><img src="http://mozshot.nemui.org/shot/large?$1"><br />$1</div>$1</a>');
         }
       }
       else if (json.data[i].body.match(/((http:|https:)\/\/[\x21-\x26\x28-\x7e]+)/))
       {
-        json.data[i].body_html = json.data[i].body.replace(/((http:|https:)\/\/[\x21-\x26\x28-\x7e]+)/gi, '<a href="$1"><div class="urlBlock"><img src="http://www.google.com/s2/favicons?domain=$1"><br><img src="http://mozshot.nemui.org/shot/large?$1"><br />$1</div></a>');
+        json.data[i].body_html = json.data[i].body.replace(/((http:|https:)\/\/[\x21-\x26\x28-\x7e]+)/gi, '<a href="$1"><center><div class="urlBlock"><img src="http://www.google.com/s2/favicons?domain=$1"></center><br><img src="http://mozshot.nemui.org/shot/large?$1"><br />$1</div></a>');
       }
     }
   }
